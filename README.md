@@ -66,3 +66,16 @@ Backend Engineer***
 Github: https://github.com/personFour
 
 LinkedIn: https://linkedin.com/personFour
+
+
+Monday:
+
+[ ] User Login/Signup endpoints built out including the User Models Use JWT/Sessions strategies learned in Authentication.
+[ ] React app and Backend App talking to one another, focus on CORS issues
+[x] Data Migrations and Seeds set up for mock data
+        {id: 1, username: 'Bloom', password: 'Tech'},
+        {id: 2, username: 'Lambda', password: 'University'},
+        {id: 3, username: 'test', password: 'test'}
+[x] Together with my team, I populated backlog on Trello with user stories
+[x] Together with my team, finished up Product Vision Document (don't skimp on planning)
+[x] All Project's file structures scaffolded and project architecture decided

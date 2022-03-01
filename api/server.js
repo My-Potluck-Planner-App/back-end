@@ -5,15 +5,15 @@ const authRouter = require('./auth/auth-router');
 const server = express();
 
 const sessionConfig = {
-    name: 'bloom_gp_auth1',
-    secret: 'keep it secret, keep it safe!',
+    name: 'potluck_planner',
+    secret: 'potluck planner was made by students',
     cookie: {
       maxAge: 1000 * 60 * 60 * 24,
       secure: false,
       httpOnly: true,
     },
     resave: false,
-    saveUnitialized: false,
+    saveUninitialized: true
   };
   
 server.use(session(sessionConfig));
