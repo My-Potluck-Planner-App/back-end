@@ -8,11 +8,13 @@
     "start": "node index.js",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
-    "test": "cross-env NODE_ENV=testing jest --verbose --watch --runInBand"
+    "test": "cross-env NODE_ENV=testing jest --verbose --watch --runInBand",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

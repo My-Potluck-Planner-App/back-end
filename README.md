@@ -73,11 +73,9 @@ Monday:
 [x] User Login/Signup endpoints built out including the User Models Use JWT/Sessions strategies learned in Authentication.
 [x] React app and Backend App talking to one another, focus on CORS issues
         Endpoints:
-                http://localhost:8080/user -get
-                http://localhost:8080/user/session -get
+                /user -get request, takes
                 http://localhost:8080/auth/register -post
                 http://localhost:8080/auth/login -post
-                http://localhost:8080/auth/logout -get
 [x] Data Migrations and Seeds set up for mock data
         {
                 id: 1, 
