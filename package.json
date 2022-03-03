@@ -1,7 +1,6 @@
 {
   "name": "potluckplanner",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
