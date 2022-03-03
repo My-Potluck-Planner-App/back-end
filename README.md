@@ -109,3 +109,10 @@ Monday:
 [x] Together with my team, I populated backlog on Trello with user stories
 [x] Together with my team, finished up Product Vision Document (don't skimp on planning)
 [x] All Project's file structures scaffolded and project architecture decided
+
+[ ] 80% of endpoints built
+[ ] All data models fully fleshed out
+[ ] 100% of endpoints built.
+[ ] Today I focused on bugs and polish.
+[ ] As a team, we mobbed program to complete any front end work. All web members in the group could be able to contribute to finalizing the styles.
+[ ] As a team, we documented our projects within the Readme files in their Github repositories. Without having to talk to you specifically, any developer should be able to install, contribute to, and run your project based on the descriptions found in your readme

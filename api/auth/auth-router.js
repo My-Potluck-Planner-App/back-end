@@ -1,13 +1,14 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
 const Users = require('../users/users-model');
 const { validateUser, usernameIsUnique, usernameExists } = require('./auth-middleware');
+const { BCRYPT_ROUNDS, JWT_SECRET } = require('../secrets');
 
 router.post('/register', validateUser, usernameIsUnique, async (req, res, next) => {
     try {
         const user = req.user;
-        const hash = bcrypt.hashSync(user.password, 12);
+        const hash = bcrypt.hashSync(user.password, BCRYPT_ROUNDS);
         user.password = hash;
         let result = await Users.add(user);
         res.status(201).json(result);
@@ -17,33 +18,29 @@ router.post('/register', validateUser, usernameIsUnique, async (req, res, next) 
 });
 
 router.post('/login', validateUser, usernameExists, (req, res, next) => {
-    const password = req.body.password;
-    if(bcrypt.compareSync(password, req.user.password) == true) {
-        req.session.user = req.user;
-
-        if(req.user.username == 'james') {
-            req.session.isAdmin = true;
+    let { username, password } = req.body;
+    Users.findBy({ username }).first().then(user => {
+        if(user && bcrypt.compareSync(password, user.password)) {
+            const token = generateToken(user);
+            res.status(200).json({ message: `Welcome ${user.username}`, token })
         }
-
-
-        res.json(`Welcome back, ${req.user.username}!`);
-    } else {
-        next({ status: 401, message: 'invalid credentials provided' });
-    }
+        else {
+            res.status(401).json({ message: 'Invalid Credentials' });
+        }
+    }).catch(err => { res.status(500).json(err) });
 });
 
-router.get('/logout', (req, res, next) => {
-    if(req.session) {
-        req.session.destroy(err => {
-            if (err != null) {
-                next({ message: 'error while logging out' });
-            } else {
-                res.json('logged out');
-            }
-        });
-    } else {
-        req.end();
-    }
-});
+function generateToken(user) {
+    const payload = {
+        subject: user.id,
+        username: user.username,
+    };
+
+    const options = {
+        expiresIn: '1d'
+    };
+
+    return jwt.sign(payload, JWT_SECRET, options);
+};
 
 module.exports = router;

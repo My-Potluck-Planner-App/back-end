@@ -2,19 +2,8 @@ const express = require('express');
 const session = require('express-session');
 const usersRouter = require('./users/users-router');
 const authRouter = require('./auth/auth-router');
+const sessionConfig = require('../config');
 const server = express();
-
-const sessionConfig = {
-    name: 'potluck_planner',
-    secret: 'potluck planner was made by students',
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
-      secure: false,
-      httpOnly: true,
-    },
-    resave: false,
-    saveUninitialized: true
-  };
   
 server.use(session(sessionConfig));
 
