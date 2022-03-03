@@ -7,9 +7,6 @@ const server = express();
 
 server.use(express.json());
 
-server.use('/', (req, res) => {
-  res.send('<h1>test<h1>');
-});
 server.use("/potlucks", eventsRouter);
 server.use("/auth", authRouter);
 
