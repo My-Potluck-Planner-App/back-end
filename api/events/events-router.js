@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const Events = require("./events-model");
 
+// resolves to all events
 router.get("/", (req, res, next) => {
   Events.find()
     .then((events) => {
@@ -10,6 +11,7 @@ router.get("/", (req, res, next) => {
     .catch(next);
 });
 
+// resolves to the chosen event
 router.get("/:id", (req, res, next) => {
   Events.findById(req.params.id)
     .then((selection) => {
@@ -18,6 +20,7 @@ router.get("/:id", (req, res, next) => {
     .catch(next);
 });
 
+// resolves to the created event
 router.post("/create", (req, res, next) => {
   Events.add(req.body)
     .then((event) => {
@@ -26,7 +29,8 @@ router.post("/create", (req, res, next) => {
     .catch(next);
 });
 
-router.put("/edit", (req, res, next) => {
+// resolves to the updated event
+router.put("/:id", (req, res, next) => {
   Events.update(req.params.id, req.body)
     .then((updatedEvent) => {
       res.status(200).json(updatedEvent);
@@ -34,6 +38,7 @@ router.put("/edit", (req, res, next) => {
     .catch(next);
 });
 
+// resolves to the deleted event
 router.delete("/:id", (req, res, next) => {
   Events.remove(req.params.id)
     .then((event) => {

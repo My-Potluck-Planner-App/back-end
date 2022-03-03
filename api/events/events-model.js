@@ -28,7 +28,7 @@ function findById(id) {
 }
 
 function update(id, event) {
-  db("Events")
+  return db("Events")
     .where({ id })
     .update(event)
     .then(() => {
@@ -36,6 +36,12 @@ function update(id, event) {
     });
 }
 
-function remove(id) {
-  return db("Events").where("id", id).del();
+async function remove(id) {
+  const oldEvent = await findById(id);
+  return db("Events")
+    .where("id", id)
+    .del()
+    .then(() => {
+      return oldEvent;
+    });
 }
