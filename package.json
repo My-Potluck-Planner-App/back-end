@@ -10,6 +10,9 @@
     "seed": "knex seed:run",
     "test": "cross-env NODE_ENV=testing jest --verbose --watch --runInBand"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
