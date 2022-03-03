@@ -34,7 +34,7 @@ router.put("/edit", (req, res, next) => {
     .catch(next);
 });
 
-router.post("/:id", (req, res, next) => {
+router.delete("/:id", (req, res, next) => {
   Events.remove(req.params.id)
     .then((event) => {
       res.json(event);

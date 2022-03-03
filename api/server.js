@@ -15,7 +15,7 @@ server.get("/", (req, res) => {
   res.status(200).json({ api: "up" });
 });
 
-server.get("/events", eventsRouter);
+server.get("/potlucks", eventsRouter);
 server.get("/auth", authRouter);
 
 server.use((err, req, res, next) => {
