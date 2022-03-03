@@ -73,9 +73,34 @@ Monday:
 [x] User Login/Signup endpoints built out including the User Models Use JWT/Sessions strategies learned in Authentication.
 [x] React app and Backend App talking to one another, focus on CORS issues
         Endpoints:
-                /user -get request, takes
-                http://localhost:8080/auth/register -post
-                http://localhost:8080/auth/login -post
+                [POST] /auth/register - expects a unique username & password
+                [POST] /auth/login - expects a username & password
+                        For testing: 
+                                username = user, 
+                                password = password
+                [GET] /potlucks - returns an array of all events:
+                        [
+                                {
+                                        id: 1,
+                                        name: Party at Patty's,
+                                        date: 267289,
+                                        time: 1015,
+                                        location: 123 Main St.
+                                }
+                        ]
+                [GET] /potlucks/:id - returns the object with that id
+                [POST] /potlucks/create - expects an object:
+                        {
+                                // all fields are required!!
+                                name: '',
+                                date: 1234,
+                                time: 1234,
+                                location: ''
+                        }
+                        returns the created object
+                [PUT] /potlucks/:id - expects an object (see /create) & returns the updated event
+                [DELETE] /potlucks/:id - returns the deleted object
+                
 [x] Data Migrations and Seeds set up for mock data
         {
                 id: 1, 
