@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const Users = require("../events/events-model");
+const Users = require("./users-model");
 const {
   validateUser,
   usernameIsUnique,
@@ -15,7 +15,7 @@ router.post(
   usernameIsUnique,
   async (req, res, next) => {
     try {
-      const user = req.user;
+      const user = req.body;
       const hash = bcrypt.hashSync(user.password, BCRYPT_ROUNDS);
       user.password = hash;
       let result = await Users.add(user);

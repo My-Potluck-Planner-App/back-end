@@ -1,4 +1,4 @@
-const Users = require("../events/events-model");
+const Users = require("./users-model");
 
 function validateUser(req, res, next) {
   !req.body.username ||
@@ -21,7 +21,7 @@ async function usernameIsUnique(req, res, next) {
   user
     ? next({
         status: 400,
-        message: `user '${req.user.username}' already exists!`,
+        message: `user '${req.user.username}' already exists`,
       })
     : next();
 }
@@ -31,7 +31,7 @@ async function usernameExists(req, res, next) {
   user == null
     ? next({
         status: 400,
-        message: `user '${req.user.username}' does not exist!`,
+        message: `user '${req.user.username}' does not exist`,
       })
     : (req.user = user);
   next();
