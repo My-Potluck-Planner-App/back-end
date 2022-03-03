@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 
-const usersRouter = require("./users/users-router");
+const eventsRouter = require("./events/events-router");
 const authRouter = require("./auth/auth-router");
 
 const server = express();
@@ -15,7 +15,7 @@ server.get("/", (req, res) => {
   res.status(200).json({ api: "up" });
 });
 
-server.get("/user", usersRouter);
+server.get("/events", eventsRouter);
 server.get("/auth", authRouter);
 
 server.use((err, req, res, next) => {

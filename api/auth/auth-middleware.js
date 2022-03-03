@@ -1,4 +1,4 @@
-const Users = require("../users/users-model");
+const Users = require("../events/events-model");
 
 function validateUser(req, res, next) {
   !req.body.username ||
@@ -37,22 +37,8 @@ async function usernameExists(req, res, next) {
   next();
 }
 
-function restricted(req, res, next) {
-  req.session.user == null
-    ? next({ status: 401, message: "this endpoint is restricted!" })
-    : next();
-}
-
-function restrictedAdmin(req, res, next) {
-  req.session.isAdmin != true
-    ? next({ status: 401, message: "this endpoint is restricted!" })
-    : next();
-}
-
 module.exports = {
   validateUser,
   usernameIsUnique,
   usernameExists,
-  restricted,
-  restrictedAdmin,
 };
