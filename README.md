@@ -1,4 +1,4 @@
-# 🍽 *Potluck Planner*: Bloom Tech Build Week, December 2022
+# 🍽 *Potluck Planner*: Bloom Tech Build Week, March 2022
 
 > The purpose of Build Week is to empower students to demonstrate mastery of your learning objectives. The Build Weeks experience helps prepare students for the job market.
 > 
@@ -21,121 +21,28 @@ If you have ever tried to organize a potluck through text messages, online to-do
 
 ### *Heroku API*
 
-Deployed URL: [https://deployedPotLuckPlannerAPI.heroku.com](https://deployedPotLu)
+Deployed URL: [https://my-potluck-planner-app.herokuapp.com/](https://my-potluck-planner-app.herokuapp.com/)
 
 # *API Endpoints*
 
-[Authentication](https://www.notion.so/42ba18c80d6a42de97fbe6243ca275f7)
+[Authentication](https://my-potluck-planner-app.herokuapp.com/auth)
 
-[Users](https://www.notion.so/d839a0d8125540b78623013cbc28a42f)
+[Events](https://my-potluck-planner-app.herokuapp.com/potlucks)
 
 # *Meet the Team*
 
-![anon.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6dde1f29-ec42-45ff-b151-574c24bf60b4/anon.png)
+![Andrew Gary](https://media-exp1.licdn.com/dms/image/C4E03AQECka4DC2PbWA/profile-displayphoto-shrink_200_200/0/1637132108300?e=1651708800&v=beta&t=Eh8BidUwfTz3oSjEsHxmVq3ojJDgD7dTenGLyWO3Kkk)
 
-***Person One 
-Front End React I Engineer***
+***Front End Architect  React II Engineer***
 
-Github: https://github.com/personOne
+Github: https://github.com/AndrewGary
 
-LinkedIn: https://linkedin.com/personOne
+LinkedIn: https://linkedin.com/in/andrew-gary-35339b209/
 
-![anon.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6dde1f29-ec42-45ff-b151-574c24bf60b4/anon.png)
+![Darla Young](https://avatars.githubusercontent.com/u/89855627?v=4)
 
-***Person Two 
-Front End React I Engineer***
+***Backend Engineer***
 
-Github: https://github.com/personTwo
+Github: https://github.com/Darla-Young
 
-LinkedIn: https://linkedin.com/personTwo
-
-![anon.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6dde1f29-ec42-45ff-b151-574c24bf60b4/anon.png)
-
-***Person Three 
-Front End Architect  React II Engineer***
-
-Github: https://github.com/personThree
-
-LinkedIn: https://linkedin.com/personThree
-
-![anon.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6dde1f29-ec42-45ff-b151-574c24bf60b4/anon.png)
-
-***Person Four 
-Backend Engineer***
-
-Github: https://github.com/personFour
-
-LinkedIn: https://linkedin.com/personFour
-
-
-Monday:
-
-[x] User Login/Signup endpoints built out including the User Models Use JWT/Sessions strategies learned in Authentication.
-[x] React app and Backend App talking to one another, focus on CORS issues
-        Endpoints:
-                [POST] /auth/register - expects a unique username & password
-                [POST] /auth/login - expects a username & password
-                        For testing: 
-                                username = user, 
-                                password = password
-                [GET] /potlucks - returns an array of all events:
-                        [
-                                {
-                                        id: 1,
-                                        name: Party at Patty's,
-                                        date: 267289,
-                                        time: 1015,
-                                        location: 123 Main St.
-                                }
-                        ]
-                [GET] /potlucks/:id - returns the object with that id
-                [POST] /potlucks/create - expects an object:
-                        {
-                                // all fields are required!!
-                                name: '',
-                                date: 1234,
-                                time: 1234,
-                                location: ''
-                        }
-                        returns the created object
-                [PUT] /potlucks/:id - expects an object (see /create) & returns the updated event
-                [DELETE] /potlucks/:id - returns the deleted object
-                
-[x] Data Migrations and Seeds set up for mock data
-        {
-                id: 1, 
-                username: 'Bloom', 
-                password: 'Tech', 
-                event: 'Sunday Revival',
-                confirmed: true,
-                authed: false,
-                item: potato salad
-        }
-        {
-                id: 2, 
-                username: 'Lambda', 
-                password: 'University',
-                event: "Party at Patty's",
-                confirmed: false,
-                authed: true,
-                item: coleslaw
-        }, 
-        {
-                id: 3, 
-                username: 'test', 
-                password: 'test',
-                event: "Dave's backyard BBQ",
-                confirmed: false,
-                authed: false,
-                item: BBQ
-        }, 
-[x] Together with my team, I populated backlog on Trello with user stories
-[x] Together with my team, finished up Product Vision Document (don't skimp on planning)
-[x] All Project's file structures scaffolded and project architecture decided
-
-[ ] 80% of endpoints built
-[ ] All data models fully fleshed out
-[ ] 100% of endpoints built.
-[ ] Today I focused on bugs and polish.
-[ ] As a team, we mobbed program to complete any front end work. All web members in the group could be able to contribute to finalizing the styles.
-[ ] As a team, we documented our projects within the Readme files in their Github repositories. Without having to talk to you specifically, any developer should be able to install, contribute to, and run your project based on the descriptions found in your readme
+LinkedIn: https://www.linkedin.com/in/darla-young/

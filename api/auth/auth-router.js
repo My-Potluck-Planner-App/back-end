@@ -9,6 +9,7 @@ const {
 } = require("./auth-middleware");
 const { BCRYPT_ROUNDS, JWT_SECRET } = require("../secrets");
 
+// register & login: require username & password
 router.post(
   "/register",
   validateUser,
